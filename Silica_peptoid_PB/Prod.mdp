@@ -1,0 +1,52 @@
+integrator               = md
+tinit                    = 0
+dt                       = 0.004
+nsteps                   = 100000000
+init-step                = 0
+comm_mode                = Linear
+nstcomm                  = 500
+
+
+nstxout                  = 25000
+nstvout                  = 0
+nstfout                  = 0
+nstlog                   = 25000
+nstcalcenergy            = 1
+nstenergy                = 25000
+nstxout-compressed       = 500
+compressed-x-grps        = non-water
+
+cutoff-scheme            = Verlet
+nstlist                  = 15
+pbc                      = xyz
+periodic-molecules       = yes
+rlist                    = 1.0
+
+coulombtype              = PME
+coulomb-modifier         = Potential-shift-Verlet
+rcoulomb-switch          = 0
+rcoulomb                 = 1.0
+vdw-type                 = Cut-off
+vdw-modifier             = Potential-shift-Verlet
+rvdw-switch              = 0
+rvdw                     = 1.0
+DispCorr                 = No
+fourierspacing           = 0.08
+
+Tcoupl                   = v-rescale
+tc_grps                  = system
+tau_t                    = 0.4
+ref_t                    = 300
+Pcoupl                   = no
+
+
+gen_vel                  = yes
+gen_temp                 = 300.0
+gen_seed                 = -1
+
+constraints              = h-bonds
+constraint-algorithm     = lincs
+lincs-order              = 4
+lincs_iter               = 1
+lincs-warnangle          = 30
+

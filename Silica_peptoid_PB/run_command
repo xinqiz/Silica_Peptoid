@@ -1,0 +1,1 @@
+mpirun -np 40 gmx_mpi mdrun -ntomp 1 -multidir 0 1 2 3 4 -s replica -c replica -e replica -x replica -o replica -g replica -plumed plumed.dat -cpi -cpo -cpt 1.0 -v >& log.txt
